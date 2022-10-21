@@ -1,0 +1,49 @@
+What the maximum salary paid to a salesman
+SELECT MAX(SAL) AS "MAXIMUM SALARY"
+FROM [EMP]
+WHERE JOB LIKE "SALESMAN";
+
+What the number of employees in department 30
+SELECT  COUNT(EMPNO) 
+FROM [EMP]
+WHERE DEPTNO LIKE 30;
+
+What is average salary for employees in department 20.
+SELECT AVG(SAL)
+FROM [EMP]
+WHERE DEPTNO LIKE 20;
+
+What is the total salary of organization
+SELECT SUM(SAL) 
+AS "TOTAL SALARY"
+FROM [EMP];
+
+How many Analysts are there in the organization
+SELECT COUNT (JOB)
+FROM [EMP]
+WHERE JOB LIKE "ANALYST";
+
+what is the total salary for the employees who are drawing commission
+SELECT SUM(SAL) 
+FROM [EMP]
+WHERE COMM IS NOT NULL;
+
+What is the average salary for all departments
+SELECT  AVG(SAL)
+FROM [EMP]
+GROUP BY DEPTNO;
+
+What the number of designations available in the organization
+SELECT  COUNT (DISTINCT(JOB))
+FROM [EMP];
+
+Which department is having maximum salary less than 3000
+select max(sal),DEPTNO
+from emp
+group by DEPTNO
+having max(sal)<3000;
+
+What is the minimum salary of the organization
+SELECT MIN(SAL)
+FROM EMP;
+

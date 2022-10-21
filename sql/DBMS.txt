@@ -1,0 +1,200 @@
+List the names of all analysts and salesman.
+SELECT JOB
+FROM EMP
+WHERE JOB="ANALYST"  OR JOB="SALESMAN";
+
+List the names of employees whose employee numbers are 7369, 7521, 7839, 7934, 7788.
+SELECT ENAME 
+FROM EMP
+WHERE EMPNO=7369 OR EMPNO=7521 OR EMPNO=7839 OR EMPNO=7934 OR EMPNO=7788;
+
+List employees not belonging to department 30, 40 or 10.
+SELECT ENAME 
+FROM EMP
+WHERE  DEPTNO NOT IN(30,40,10);
+
+ List the employee name and hire date in the descending order of their salary.
+SELECT ENAME,HIREDATE,SAL 
+FROM EMP
+ORDER BY SAL DESC;
+
+
+ List the employee name, salary, PF, HRA, DA and gross; order the results in the ascending order of gross. HRA is 50% of the salary and DA is 30% of the salary.
+SELECT 
+ENAME,
+SAL,
+SAL*0.5 AS HRA,
+SAL*0.3 AS DA,
+SAL*0.12 AS PF,
+(SAL+(SAL*0.5)+(SAL*0.3)+(SAL*0.12)) AS GROSS
+FROM EMP
+ORDER BY GROSS;
+
+ List the name and designation of the employees who does not report to anybody
+SELECT ENAME,JOB 
+FROM EMP
+WHERE MGR is null;
+
+List the employees not assigned to any department.
+SELECT ENAME 
+FROM [EMP]
+WHERE DEPTNO is null;
+
+What is the emp num of 'James'
+SELECT EMPNO
+FROM [EMP]
+WHERE ENAME IS "JAMES";
+
+What is the salary of 'king'?
+
+Who is the President for organization?
+SELECT ENAME,JOB
+FROM [EMP]
+WHERE ENAME="KING" OR JOB="PRESIDENT";
+
+Which dept is in Boston?
+SELECT DNAME
+FROM [DEPT]
+WHERE LOC LIKE "BOSTON";
+
+What is the dept number of accounting?
+SELECT DEPTNO
+FROM [DEPT]
+WHERE DNAME LIKE "ACCOUNTING";
+
+List Employee names drawing sal bet 1500 & 3000?
+SELECT ENAME 
+FROM [EMP]
+WHERE SAL BETWEEN 1500 AND 3000;
+
+Give emp details for employees drawing commission
+SELECT *
+FROM [EMP]
+WHERE COMM IS NOT NULL;
+
+
+Who is drawing salary less than 3500
+SELECT ENAME FROM [EMP]
+WHERE SAL < 3500;
+
+
+
+ Who is the manager for dept no 30
+SELECT ENAME FROM [EMP]
+WHERE DEPTNO = 30 AND JOB ='MANAGER';
+
+
+
+ What is the salary of following:
+King, blake,ford,smith
+SELECT SAL FROM [EMP]
+WHERE ENAME='KING' OR ENAME='BLAKE'OR ENAME='FORD' OR ENAME='SMITH'
+
+
+
+ List all details of all the managers?
+SELECT *
+FROM [EMP]
+WHERE JOB LIKE "MANAGER";
+
+
+1.How many employees work in Chicago?
+SELECT COUNT(ENAME) AS "CHICAGO EMP"
+FROM EMP E
+JOIN DEPT D
+ON (E.DEPTNO = D.DEPTNO)
+WHERE D.loc="CHICAGO";
+
+
+
+
+2.Which employees work in Chicago? 
+SELECT ENAME AS "CHICAGO EMP"
+FROM EMP E
+JOIN DEPT D
+ON (E.DEPTNO = D.DEPTNO)
+WHERE D.loc="CHICAGO";
+
+3.Display the employees who were hired before their managers
+SELECT E.EMPNO,E.ENAME FROM EMP AS E
+    JOIN EMP AS M
+    ON E.EMPNO = M.MGR
+    AND M.HIREDATE < E.HIREDATE;
+
+4.Display the salesmen who are not in Boston 
+SELECT 
+ E.ENAME, 
+ D.LOC
+FROM EMP E
+JOIN DEPT D 
+ON (E.DEPTNO = D.DEPTNO)
+WHERE D.LOC NOT LIKE 'BOSTON';
+
+
+5.List the details of the employees along with their location 
+
+SELECT * 
+FROM EMP E
+LEFT OUTER JOIN DEPT D;
+
+6.Display the details of the employee working in Chicago 
+SELECT * 
+FROM EMP E
+LEFT OUTER JOIN DEPT D
+ON(E.DEPTNO=D.DEPTNO)
+WHERE D.LOC LIKE"CHICAGO";
+
+list the employees who draws salary more than Miller
+SELECT E.ENAME
+FROM [EMP] E
+WHERE SAL >(SELECT SAL FROM EMP WHERE ENAME ='MILLER')
+
+List the department without any employees in it. 
+SELECT
+DNAME,
+DEPTNO
+FROM  DEPT
+WHERE DEPTNO NOT IN (SELECT DEPTNO
+             FROM EMP)
+
+List the name and job of the employees who does not report to anybody. 
+SELECT ENAME,JOB FROM [EMP]
+WHERE MGR IS NULL;
+
+
+List the employees’ names and cities in which they work. Order the list by city. 
+SELECT EMP.ENAME, DEPT.LOC
+FROM DEPT
+INNER JOIN EMP ON EMP.DEPTNO=DEPT.DEPTNO
+ORDER BY DEPT.LOC;
+
+
+List the salesmen who are drawing salary less than Clark
+SELECT ENAME,JOB,SAl FROM [EMP]
+WHERE JOB LIKE 'SALESMAN' AND SAL<(SELECT SAL FROM EMP
+                       WHERE ENAME LIKE 'CLARK');
+
+
+
+
+Display those emp who are working as manager 
+SELECT ENAME,JOB FROM [EMP]
+WHERE JOB LIKE 'MANAGER';
+
+
+ 
+
+Select the last name and job id from all employees whose department id is equal to Accounting. 
+SELECT EMP.ENAME,EMP.EMPNO, DEPT.DEPTNO
+FROM DEPT
+INNER JOIN EMP ON EMP.DEPTNO=DEPT.DEPTNO
+WHERE DNAME LIKE 'ACCOUNTING';
+
+
+
+
+
+
+
+
+
