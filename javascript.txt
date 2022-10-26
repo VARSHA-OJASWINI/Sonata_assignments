@@ -1,0 +1,94 @@
+
+
+<script>
+    var ename =new Array();
+    
+    ename[0]="varsha";
+    
+    ename[1]="teju";
+    
+    ename[2]="prathima";
+
+var arr2 = new Array();
+
+arr2[0]="a";
+
+arr2[1]="b";
+
+arr2[2]="c";
+
+arr2[3]="d";
+
+arr2[4]="e";
+document.write("Concate "+ename.concat(arr2)+"<br>");
+document.write("slice :"+ename.slice(0,2));
+
+</script>
+
+
+var i;
+var emp = new Array;
+emp[0]="arun";
+emp[1]="varun";
+emp[2]="john";
+console.log("length of the array is "+ emp.length);
+var temp;
+for(i=0;i<emp.length/2;i++){
+    temp=emp[i];
+    emp[i]=emp[emp.length-1-i];
+    emp[emp.length-1-i]=temp;
+}
+for(i=0;i<emp.length;i++){
+    console.log(emp[i]);
+}
+emp.sort();
+
+
+function arithmatic(a,b,opr)
+{
+if(opr=="+")
+return(a+b);
+else
+if(opr=="-")
+return(a-b);
+else
+if(opr=="*")
+return(a*b);
+else
+if(opr=="/")
+return(a/b);
+}
+var a=parseFloat(prompt("Enter the first number"));
+document.write("value of a :"+a +"<br>");
+var b=parseFloat(prompt("Enter the second number"));
+document.write("value of b :"+b +"<br>");
+var opr=prompt("Enter the operation to be performed(+/-/*//)");
+var res=arithmatic(a,b,opr);
+document.write(opr+" of "+a+" and "+b+" is "+res);
+
+
+function squareroot(n)
+{
+return Math.sqrt(n);
+}
+var n=parseInt(prompt("enter a number:"));
+var a=squareroot(n);
+document.write(a);
+
+
+function power(n)
+{
+return Math.pow(n,b);
+}
+var n=parseInt(prompt("enter a number:"));
+var b=parseInt(prompt("enter a number:"));
+document.write(power(n));
+
+
+var d=new Date(prompt("enter date"));
+var a=new Date();
+var b=d.getTime()-a.getTime();
+var c=b/(1000*60*60*24);
+document.write(c);
+
+
