@@ -1,0 +1,280 @@
+
+
+<script>
+    var ename =new Array();
+    
+    ename[0]="varsha";
+    
+    ename[1]="teju";
+    
+    ename[2]="prathima";
+
+var arr2 = new Array();
+
+arr2[0]="a";
+
+arr2[1]="b";
+
+arr2[2]="c";
+
+arr2[3]="d";
+
+arr2[4]="e";
+document.write("Concate "+ename.concat(arr2)+"<br>");
+document.write("slice :"+ename.slice(0,2));
+
+</script>
+
+
+var i;
+var emp = new Array;
+emp[0]="arun";
+emp[1]="varun";
+emp[2]="john";
+console.log("length of the array is "+ emp.length);
+var temp;
+for(i=0;i<emp.length/2;i++){
+    temp=emp[i];
+    emp[i]=emp[emp.length-1-i];
+    emp[emp.length-1-i]=temp;
+}
+for(i=0;i<emp.length;i++){
+    console.log(emp[i]);
+}
+emp.sort();
+
+
+function arithmatic(a,b,opr)
+{
+if(opr=="+")
+return(a+b);
+else
+if(opr=="-")
+return(a-b);
+else
+if(opr=="*")
+return(a*b);
+else
+if(opr=="/")
+return(a/b);
+}
+var a=parseFloat(prompt("Enter the first number"));
+document.write("value of a :"+a +"<br>");
+var b=parseFloat(prompt("Enter the second number"));
+document.write("value of b :"+b +"<br>");
+var opr=prompt("Enter the operation to be performed(+/-/*//)");
+var res=arithmatic(a,b,opr);
+document.write(opr+" of "+a+" and "+b+" is "+res);
+
+
+function squareroot(n)
+{
+return Math.sqrt(n);
+}
+var n=parseInt(prompt("enter a number:"));
+var a=squareroot(n);
+document.write(a);
+
+
+function power(n)
+{
+return Math.pow(n,b);
+}
+var n=parseInt(prompt("enter a number:"));
+var b=parseInt(prompt("enter a number:"));
+document.write(power(n));
+
+
+var d=new Date(prompt("enter date"));
+var a=new Date();
+var b=d.getTime()-a.getTime();
+var c=b/(1000*60*60*24);
+document.write(c);
+
+
+
+Greet a person based on the time like, Good morning, good night and so on
+
+
+
+   var myDate = new Date();
+var hrs = myDate.getHours();
+var greet;
+if (hrs < 12)
+  greet = 'Good Morning';
+else if (hrs >= 12 && hrs <= 17)
+  greet = 'Good Afternoon';
+else if (hrs >= 17 && hrs <= 24)
+  greet = 'Good Evening';
+document.write(greet);
+
+
+accept a string in a function and Split it into 2 words
+
+
+
+function Split(str)
+    {
+        var str = str.split(" ");
+        console.log(str);
+    }
+var str = prompt("enter your name");
+Split(str);
+
+
+accept a decimal number from use and convert to hexadecimal number
+
+
+
+var num1 = parseFloat(prompt("Enter a base of a num: "));
+var num2 = num1.toString(16);
+console.log(num2);
+
+
+
+write a function which  displays length of the entered string.
+
+
+
+
+function len(str)
+    {
+        var len = str.length;
+        return len;
+    }
+var str = prompt("enter your name");
+len(str);
+
+
+
+
+Display below string in upper case:
+question.
+
+
+
+
+var str = "question";
+console.log(str.toUpperCase());
+
+
+
+
+display the current time
+
+
+
+function getTime(){
+    var today =new Date();
+    var h =today.getHours();
+    var m =today.getMinutes();
+    return h+":"+m;
+}
+var time = getTime();
+console.log(time);
+
+
+
+
+
+
+Create an HTML document that displays  an alert  dialog box immediately after the page loads & displays(“ finished loading “).
+And displays a different  alert  dialog  box when the user clicks on a form button. (‘Clicked on the button’)
+
+
+
+<html>
+<head>
+<title>Alert</title>
+</head>
+<body>
+<input type = "button" id ="btn" value="click me"/>
+<script>
+alert("finished loading")
+document.getElementById("btn").addEventListener("click",clicked);
+function clicked()
+{alert("clicked on the button");}
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+Create  a form with  2 text box , input and output .  The text  entered in lowercase in the input text  box must be converted to uppercase and displayed in the output  textbox
+
+
+
+<html>
+<body>
+   Input:<input id="demo" type="text"><br>
+   Output:<input id="display"><br>
+   <input type="submit" onclick="toupper()">
+   <script>
+    function toupper()
+    {
+     var text = document.getElementById("demo").value;
+     var result = text.toUpperCase();
+     document.getElementById("display").value = result;
+    }
+   </script>
+</body>
+</html>
+
+
+
+
+
+using JaVASCRIPT Create a form which checks whether a checkbox is checked/not and display  appropriate messages  through  alert boxes      
+
+
+
+
+<html lang="en">
+<body>
+<input type="checkbox" id="cb1">Check box1</input><br>
+<input type="submit" onclick="validcheck()"></input>
+   <script>
+    function validcheck(){
+     var x = document.getElementById("cb1").checked;
+     if(x==false){
+      alert("Please tick the checkbox");
+    }
+    }
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+USE jAVASCRIPT to Display a simple message "Welcome!!!" on your demo webpage and when the user hovers over the message, a popup should be displayed with a message "Welcome to my Webpage!!!".
+
+
+
+<html>
+<head>
+    <title>Web Page</title>
+<script>
+alert("Finished Loading");
+</script>
+</head>
+<body>
+<button type="button" onclick="alert('Welcome!!!')">Click Me!</button>
+</body>
+</html>
+
+
+
+
