@@ -1,0 +1,117 @@
+Create an object car with following properties:
+color
+brand
+Model
+and methods are 
+apply break
+accelerate
+
+function car(color,brand,model){
+this.color=color;
+this.brand=brand;
+this.model=model;
+this.applybreak=applybreak;
+this.accelerate=accelerate;
+function applybreak()
+{
+document.write("apply break");
+}
+function accelerate()
+{
+document.write("accelerate");
+}
+}
+a=new car("black","kia",2022);
+document.write(a.color+" "+a.brand+" "+a.model+"<br>");
+a.applybreak();
+a.accelerate();
+
+
+
+Take input from a text box for model, brand and colour .
+Connect with your object and display output in browser
+
+<html>
+<head>
+<title>CAR</title>
+</head>
+<body>
+<form>
+Color
+<input type="text" placeholder="enter car color" id = "cc">
+<br>
+brand
+<input type="text" placeholder="enter car brand" id = "cb">
+<br>
+Model
+<input type="text" placeholder="enter car Model" id = "cm"><br> <br>
+<input type ="button" id = "btn" value ="get details" onclick="getdetails()">
+<p id="1"></p>   
+<script>  
+ function getdetails()    {    
+ var a = document.getElementById("cc").value;   
+  var b = document.getElementById("cb").value;     
+var c = document.getElementById("cm").value;    
+ var result = a+"<br>" + b +"<br>" + c;    
+ document.getElementById("1").innerHTML = result;    }
+</script>
+</form>
+
+
+exception handling
+
+
+function car(){
+    var color,brand,model;
+    color=document.getElementById("color").value;
+    brand=document.getElementById("brand").value;
+    model=document.getElementById("model").value;
+   
+   
+    try{
+            if(color=="")
+            {
+                throw("not to be empty");
+            }else
+            {
+                var c=new car1(color,brand,model);
+                document.write("color :"+c.color+" "+"Brand :"+c.brand+" "+"Model :"+c.model+"<br>");
+                c.breaks("Break");
+                c.accelerate("Accelerate");
+            }
+    }catch(e){
+       document.getElementById("err_msg").innerHTML=e;
+       document.getElementById("err_msg").style.color="red";
+    }
+ 
+   
+}
+
+function validate()
+{    var name = document.getElementById("name").value;   
+ var regname = /^[a-zA-Z]+$/;   
+ var mobile = document.getElementById("contact").value;  
+  var regmobile = /^\d{10}$/;    
+if(!regname.test(name))   
+ {       
+ alert("Please provide valid name");       
+ document.cakeform.name.focus();   
+ }   
+ if(!regmobile.test(mobile))    
+{        
+alert("please enter valid phone number");        
+document.cakeform.contact.focus();   
+ }
+}
+function cakeprice()
+{
+var weight = parseFloat(document.getElementById("weight").value);
+if(weight < 0.5)    alert("The Minimum weight is 0.5KG");
+var price = weight * 600;
+var egg = document.getElementById("cake").value;
+if(egg == "yes")    price = price + 50;
+document.getElementById("amount").value = price;
+}
+
+
+
