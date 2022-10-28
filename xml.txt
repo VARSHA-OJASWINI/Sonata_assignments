@@ -1,0 +1,9 @@
+<person>
+<title>my first xml page</title>
+<name>varsha</name>
+<address>bangalore</address>
+<mobile>9951172867</mobile>
+<person dob="29-6-2000"></person>
+<qualification>b.tech</qualification>
+<specialization>cse</specialization>
+</person>
